@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-dice"></i> Random Number Generator</h1>
+            <button id="theme-btn" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <div class="main-content">
+            <div class="generator-section">
+                <div class="number-display">
+                    <div class="current-number" id="current-number">?</div>
+                    <div class="number-label">Generated Number</div>
+                </div>
+
+                <div class="controls">
+                    <div class="range-inputs">
+                        <div class="input-group">
+                            <label for="min-range">Minimum:</label>
+                            <input type="number" id="min-range" value="1" min="-999999" max="999999">
+                        </div>
+                        <div class="input-group">
+                            <label for="max-range">Maximum:</label>
+                            <input type="number" id="max-range" value="100" min="-999999" max="999999">
+                        </div>
+                    </div>
+
+                    <div class="generation-controls">
+                        <button id="generate-btn" class="btn btn-primary">
+                            <i class="fas fa-random"></i> Generate Number
+                        </button>
+                        <button id="generate-multiple-btn" class="btn btn-secondary">
+                            <i class="fas fa-list"></i> Generate Multiple
+                        </button>
+                    </div>
+
+                    <div class="options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="exclude-repeats">
+                            <span class="checkmark"></span>
+                            Exclude repeated numbers
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="animate-numbers">
+                            <span class="checkmark"></span>
+                            Animate generation
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h2>Generation History</h2>
+                <div class="history-controls">
+                    <button id="clear-history-btn" class="btn btn-danger">
+                        <i class="fas fa-trash"></i> Clear History
+                    </button>
+                    <button id="export-btn" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                </div>
+                <div id="history-list" class="history-list">
+                    <div class="empty-state">
+                        <i class="fas fa-history"></i>
+                        <p>No numbers generated yet. Generate your first number!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <h2>Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-hashtag"></i>
+                        <h3 id="total-generated">0</h3>
+                        <p>Total Generated</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3 id="average-number">0</h3>
+                        <p>Average Number</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-arrow-up"></i>
+                        <h3 id="highest-number">0</h3>
+                        <p>Highest Number</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-arrow-down"></i>
+                        <h3 id="lowest-number">0</h3>
+                        <p>Lowest Number</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
